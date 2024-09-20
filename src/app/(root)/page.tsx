@@ -1,5 +1,7 @@
+import { Button } from "@/components/ui/button";
+
 const page = () => {
-  return <div>项目初始化</div>;
+  return <Button>Click me</Button>;
 };
 
 export default page;
