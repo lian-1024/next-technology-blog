@@ -1,9 +1,16 @@
+import LayoutHeader from '@/components/layout/layout-header';
+
 const Layout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <>{children}</>;
+  return (
+    <>
+      <LayoutHeader />
+      {children}
+    </>
+  );
 };
 
 export default Layout;
