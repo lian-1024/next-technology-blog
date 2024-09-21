@@ -35,7 +35,7 @@ const Search = ({}) => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="请输入您要搜索关键字" {...field} className="text-xs rounded-full" />
+                  <Input placeholder="请输入您要搜索关键字" {...field} className="text-xs rounded-full " />
                 </FormControl>
               </FormItem>
             )}

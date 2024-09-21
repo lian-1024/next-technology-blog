@@ -1,3 +1,4 @@
+import { ThemeToggle } from '@/components/Theme-toggle';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import localFont from 'next/font/local';
@@ -26,10 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
         {/* 使用 next-theme 实现主题切换 */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
+          <ThemeToggle className="fixed right-3 top-20 z-50  " />
         </ThemeProvider>
       </body>
     </html>

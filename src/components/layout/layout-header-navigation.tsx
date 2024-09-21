@@ -48,7 +48,7 @@ const LayoutHeaderNavigation = () => {
         {MenuOptions.map((menu) => (
           <NavigationMenuItem key={menu.menuName}>
             <Link href={menu.menuHref} legacyBehavior passHref>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'text-xs')}>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'text-xs text-slate-800')}>
                 {menu.menuName}
               </NavigationMenuLink>
             </Link>
