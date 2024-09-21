@@ -26,25 +26,27 @@ const Search = ({}) => {
     console.log(values);
   };
   return (
-    <Form {...form}>
-      <form action="" onSubmit={form.handleSubmit(onSubmit)} className="flex gap-3">
-        <FormField
-          control={form.control}
-          name="search"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="请输入您要搜索关键字" {...field} className="text-xs rounded-full" />
-              </FormControl>
-            </FormItem>
-          )}
-        />
+    <div className="flex justify-end flex-1">
+      <Form {...form}>
+        <form action="" onSubmit={form.handleSubmit(onSubmit)} className="flex gap-3 max-w-64">
+          <FormField
+            control={form.control}
+            name="search"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="请输入您要搜索关键字" {...field} className="text-xs rounded-full" />
+                </FormControl>
+              </FormItem>
+            )}
+          />
 
-        <Button type="submit" size="icon" className="rounded-full">
-          <SearchIcon className="h-4 w-4" />
-        </Button>
-      </form>
-    </Form>
+          <Button type="submit" size="icon" className="rounded-full">
+            <SearchIcon className="h-4 w-4" />
+          </Button>
+        </form>
+      </Form>
+    </div>
   );
 };
 
