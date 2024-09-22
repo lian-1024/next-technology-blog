@@ -110,7 +110,7 @@ const CardList = [
 
 const Note = () => {
   return (
-    <div className="pt-[86px] p-20 flex gap-12 relative dark:bg-slate-950">
+    <div className="pt-[86px] p-20  max-md:px-6 max-md:pt-28 flex gap-12 relative dark:bg-slate-950 max-md:flex-col-reverse">
       <main className="p-5">
         <NoteCard cardList={CardList} />
       </main>

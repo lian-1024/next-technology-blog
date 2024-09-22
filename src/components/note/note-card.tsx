@@ -11,7 +11,7 @@ interface NoteItem {
 
 const NoteCard = ({ cardList }: { cardList: NoteItem[] }) => {
   return (
-    <ul className="grid grid-cols-2 gap-16">
+    <ul className="grid grid-cols-2 gap-16 max-md:grid-cols-1 max-md:mt-11">
       {cardList.map((note) => (
         <li key={note.id} className="pb-2 border-b  dark:border-b-slate-600 border-b-slate-100 ">
           <Link href={'/'}>

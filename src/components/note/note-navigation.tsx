@@ -26,7 +26,7 @@ const CategoryMenu = [
 
 const NoteNavigation = () => {
   return (
-    <ul>
+    <ul className="max-md:flex bg-white dark:bg-black max-md:flex-wrap">
       {CategoryMenu.map((item) => (
         <li key={item.id} className="hover:bg-slate-50 px-6">
           <Link href={'/'} className="h-12 leading-[3rem] flex items-center">
