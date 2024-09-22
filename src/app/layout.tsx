@@ -27,11 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative `}
+      >
         {/* 使用 next-theme 实现主题切换 */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
-          <ThemeToggle className="fixed right-3 top-20 z-50  " />
+          <ThemeToggle className="fixed right-3 top-20 z-50 max-md:right-[5px]  " />
         </ThemeProvider>
       </body>
     </html>

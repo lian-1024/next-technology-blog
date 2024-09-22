@@ -1,3 +1,4 @@
+'use client';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -7,6 +8,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const MenuOptions = [
   {
@@ -35,25 +37,35 @@ const MenuOptions = [
       },
     ],
   },
-  {
-    menuName: '关于我',
-    menuHref: '/about',
-  },
 ];
 
 const LayoutHeaderNavigation = () => {
+  const pathname = usePathname();
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {MenuOptions.map((menu) => (
-          <NavigationMenuItem key={menu.menuName}>
-            <Link href={menu.menuHref} legacyBehavior passHref>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'text-xs text-slate-800')}>
-                {menu.menuName}
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        ))}
+        {MenuOptions.map((menu) => {
+          const isActive = pathname.startsWith(menu.menuHref) || menu.menuHref === pathname;
+          console.log('pathname:' + pathname + ' ' + isActive);
+          return (
+            <NavigationMenuItem key={menu.menuName}>
+              <Link href={menu.menuHref} legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+
+                    'text-xs text-slate-500 dark:text-white font-normal',
+                    {
+                      'font-bold': isActive,
+                    },
+                  )}
+                >
+                  {menu.menuName}
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          );
+        })}
       </NavigationMenuList>
     </NavigationMenu>
   );
