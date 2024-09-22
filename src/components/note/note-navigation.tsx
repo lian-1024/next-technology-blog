@@ -30,8 +30,8 @@ const NoteNavigation = () => {
       {CategoryMenu.map((item) => (
         <li key={item.id} className="hover:bg-slate-50 px-6">
           <Link href={'/'} className="h-12 leading-[3rem] flex items-center">
-            <Code className="mr-2 h-4 w-4 text-slate-600" />
-            <span className="text-sm text-slate-600">{item.name}</span>
+            <Code className="mr-2 h-4 w-4 text-slate-600 dark:text-white" />
+            <span className="text-sm text-slate-600 dark:text-white">{item.name}</span>
           </Link>
         </li>
       ))}

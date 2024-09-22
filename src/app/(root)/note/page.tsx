@@ -110,12 +110,12 @@ const CardList = [
 
 const Note = () => {
   return (
-    <div className="pt-[86px] p-20 flex gap-12 relative">
+    <div className="pt-[86px] p-20 flex gap-12 relative dark:bg-slate-950">
       <main className="p-5">
         <NoteCard cardList={CardList} />
       </main>
-      <aside className="flex-1 min-w-36 h-fit">
-        <div className="fixed z-50 border border-slate-100 rounded-xl overflow-hidden h-fit ">
+      <aside className="flex-1 min-w-48 h-fit">
+        <div className="fixed z-50 border border-slate-100 dark:border-slate-900 rounded-xl overflow-hidden h-fit ">
           <NoteNavigation />
         </div>
       </aside>
